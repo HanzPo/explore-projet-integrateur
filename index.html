@@ -20,36 +20,56 @@
         }
 
         button {
-            height: 200px;
+            height: 100px;
             width: 200px;
             font-size: 18px;
             margin: 2px;
             margin-bottom: 4px;
+        }
+
+        a {
+            margin: 0;
+            text-decoration: none;
+            padding: 0;
         }
     </style>
 </head>
 <body>
     <h1>Voyage au Québec</h1>
 
+    <a href="./regles.html">
+        <button>Règles</button>
+    </a>
+
     <h2>Des Questions</h2>
     <div class="table">
         <div class="row">
-            <a href="src/general.html">
-            <button class="categories">
-                General Québec
-            </button>
-        </a>
-            <button class="categories">
-                Montréal
-            </button>
+            <a href="./general.html">
+                <button class="categories">
+                    Questions Aléatoires
+                </button>
+            </a>
+
+            <a href="./montreal.html">
+                <button class="categories">
+                    Montréal
+                </button>
+            </a>
+            
         </div>
         <div class="row">
-            <button class="categories">
-                Ville de Québec
-            </button>
-            <button class="categories">
-                Trois-Riviéres
-            </button>
+            <a href="./quebec.html">
+                <button class="categories">
+                    Ville de Québec
+                </button>
+            </a>
+            
+            <a href="./tr.html">
+                <button class="categories">
+                    Trois-Riviéres
+                </button>
+            </a>
+            
         </div>
     </div>
 </body>

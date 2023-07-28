@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ville de Québec</title>
+    <style type="text/css">
+        
+        h1 {
+            font-size: 48px;
+        }
+        
+        h2 {
+            font-size: 32px;
+        }
+        
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+        
+        .big-button {
+            height: 100px;
+            width: 200px;
+            font-size: 18px;
+            margin: 2px;
+            margin-bottom: 4px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <a href="./index.html"><button>Retourner</button></a>
+    <h1>Ville de Québec</h1>
+    <button class="big-button">Je voudrais une question</button>
+    <div id="result">
+    </div>
+    <div id="answer">
+
+    </div>
+    
+    <script>
+        
+        
+        var paragraphs = ['Quelles couleurs sont sur le drapeu du Québec?<br>a) rouge et blanc<br>b) bleu et blanc<br>c) jaune et rouge<br>d) bleu et jaune', "Quelle ville est la troisème en importance au Québec?<br>a) Montréal<br>b) Ville de Québec<br>c) Trois-Riviéres<br>d) Gatineau"]
+        var answers = ['b) bleu et blanc', 'c) Trois-Riviéres']
+        nbParagraphs = paragraphs.length
+        paragraph = null,
+        result = document.getElementById('result');
+        answer = document.getElementById('answer');
+        button = document.getElementsByTagName('button')[1];
+        
+        
+        
+        button.addEventListener('click', function() {
+            /*
+            * Math.random() return a number between 0 and 1
+            * parseInt() return an integer (the 10 is here to say that we are in decimal)
+            * parseInt(Math.random() * nbParagraphs, 10) return a number between 0 and the number of paragraphs, so we can use it to select a paragraph in the paragraphs array
+            */
+            result.innerHTML = "";
+            answer.innerHTML = "";
+
+            questionNumber = parseInt(Math.floor(Math.random() * nbParagraphs, 10))
+
+            paragraph = paragraphs[questionNumber]
+            result.innerHTML += '<p>' + paragraph + '</p>'
+
+            result.innerHTML += '<button>Montrer la réponse</button>'
+            answerbutton = button = document.getElementsByTagName('button')[2];
+
+            
+            answerbutton.addEventListener('click', function() {
+                answer.innerHTML += answers[questionNumber]
+            }, {once : true})
+        })
+    </script>
+</body>
+
+</html>
