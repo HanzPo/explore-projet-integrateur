@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punitions</title>
+    <style type="text/css">
+        
+        h1 {
+            font-size: 48px;
+        }
+        
+        h2 {
+            font-size: 32px;
+        }
+        
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+        
+        .big-button {
+            height: 100px;
+            width: 200px;
+            font-size: 18px;
+            margin: 2px;
+            margin-bottom: 4px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <a href="./index.html"><button>Retourner</button></a>
+    <h1>Punitions</h1>
+    <button class="big-button">Donne-moi ma punition</button>
+    <div id="result">
+
+    </div>
+    
+    <script>
+        
+        var paragraphs = ["Danse jusqu'à ton prochain tour", "Saute ton tour", "10 pompes", "Ne parler qu'avec un accent britannique pandant 2 tours", "Chanter l'hymne Canadien", "Ne parler qu'avec des bruits de poulet jusqu'au prochain tour", "Tourner en tond pendant 25 secondes", "10 redressements assis", "Chante une chanson de ton choix", "Perdre un point"]
+        nbParagraphs = paragraphs.length
+        paragraph = null,
+        result = document.getElementById('result');
+        button = document.getElementsByTagName('button')[1];
+        
+        
+        
+        button.addEventListener('click', function() {
+            /*
+            * Math.random() return a number between 0 and 1
+            * parseInt() return an integer (the 10 is here to say that we are in decimal)
+            * parseInt(Math.random() * nbParagraphs, 10) return a number between 0 and the number of paragraphs, so we can use it to select a paragraph in the paragraphs array
+            */
+            result.innerHTML = "";
+
+            questionNumber = parseInt(Math.floor(Math.random() * nbParagraphs, 10));
+
+            paragraph = paragraphs[questionNumber];
+
+            result.innerHTML += '<p>' + paragraph + '</p>';
+        })
+    </script>
+</body>
+
+</html>
